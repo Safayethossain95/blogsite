@@ -6,7 +6,9 @@ function Footer() {
   <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-6">
     {/* Left Section - Company Info */}
     <div className="space-y-4">
-      <h2 className="text-2xl font-bold">BLOGME</h2>
+      <h2 className="text-2xl font-bold">
+        <img src="/images/Logo/logo.png" alt="" />
+      </h2>
       <p className="text-gray-400">
         Welcome to the ultimate source for fresh perspectives! Explore curated content to enlighten, entertain, and engage global readers.
       </p>
