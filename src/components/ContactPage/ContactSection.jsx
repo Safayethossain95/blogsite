@@ -1,4 +1,6 @@
 import  { useState } from 'react';
+import { backendApi } from '../../config/config';
+import axios from 'axios';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -18,15 +20,15 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
 
     // Simulating form submission
     setFormStatus('Sending...');
-    
-    // You can replace this with actual form submission logic (e.g., sending data to a backend)
 
-    setTimeout(() => {
+    const res = await axios.post(`${backendApi}/contactpost`,formData)
+    
+    if(res){
       setFormStatus('Message sent successfully!');
       setFormData({
         name: '',
@@ -34,7 +36,13 @@ const ContactSection = () => {
         email: '',
         message: ''
       });
-    }, 2000);
+    }else{
+      setFormStatus('Message not sent!');
+    }
+    // You can replace this with actual form submission logic (e.g., sending data to a backend)
+
+    
+    
   };
 
   return (
