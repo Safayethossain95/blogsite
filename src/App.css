@@ -6,3 +6,6 @@
 a{
     text-decoration: none!important;
 }
+.slick-slide {
+    background-color: #000!important; /* Set a background color to avoid flashing */
+  }

@@ -35,11 +35,11 @@ const MyNavbar = () => {
            isOpen ? 'h-screen pt-[40px]' : 'h-0'
          }`}
        >
-          <Link to="/" className="text-gray-300 hover:text-white">Home</Link>
-          <Link to="/about" className="text-gray-300 hover:text-white">About</Link>
-          <Link to="/blog" className="text-gray-300 hover:text-white">Blog</Link>
-          <Link to="/services" className="text-gray-300 hover:text-white">Services</Link>
-          <Link to="/contact" className="text-gray-300 hover:text-white">Contact</Link>
+          <Link to="/" className="text-gray-300 hover:text-white font-serif">Home</Link>
+          <Link to="/about" className="text-gray-300 font-serif hover:text-white">About</Link>
+          <Link to="/blog" className="text-gray-300 font-serif hover:text-white">Blog</Link>
+          <Link to="/services" className="text-gray-300  font-serif hover:text-white">Services</Link>
+          <Link to="/contact" className="text-gray-300  font-serif hover:text-white">Contact</Link>
         </div>
      
     </nav>
