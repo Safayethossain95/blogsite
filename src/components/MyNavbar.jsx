@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const MyNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,10 +12,11 @@ const MyNavbar = () => {
 
         {/* Menu Items */}
         <div className="hidden md:flex space-x-4">
-          <a href="#home" className="text-gray-300 hover:text-white">Home</a>
-          <a href="#about" className="text-gray-300 hover:text-white">About</a>
-          <a href="#services" className="text-gray-300 hover:text-white">Services</a>
-          <a href="#contact" className="text-gray-300 hover:text-white">Contact</a>
+          <Link to="/" className="text-gray-300 hover:text-white">Home</Link>
+          <Link to="/about" className="text-gray-300 hover:text-white">About</Link>
+          <Link to="/blog" className="text-gray-300 hover:text-white">Blog</Link>
+          <Link to="/services" className="text-gray-300 hover:text-white">Services</Link>
+          <Link to="/contact" className="text-gray-300 hover:text-white">Contact</Link>
         </div>
 
         {/* Hamburger Icon */}
