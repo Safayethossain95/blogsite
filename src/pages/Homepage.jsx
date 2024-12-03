@@ -1,4 +1,4 @@
-import React from 'react';
+
 import AppLayout from './../layout/AppLayout';
 import Banner from '../components/Banner';
 

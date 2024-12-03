@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+
 import {Toaster} from "react-hot-toast";
 import MyNavbar from '../components/MyNavbar';
 
