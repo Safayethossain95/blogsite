@@ -13,6 +13,7 @@ import BlogPage from './pages/BlogPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ServicePage from './pages/ServicePage';
 import ContactPage from './pages/ContactPage';
+import LoginPage from './pages/LoginPage';
 function App() {
   
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/services" element={<ServicePage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
  
