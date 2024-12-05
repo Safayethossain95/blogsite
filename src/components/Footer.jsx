@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 function Footer() {
@@ -12,21 +13,7 @@ function Footer() {
       <p className="text-gray-400">
         Welcome to the ultimate source for fresh perspectives! Explore curated content to enlighten, entertain, and engage global readers.
       </p>
-      {/* Social Icons */}
-      <div className="flex space-x-4">
-        <a href="#" className="text-gray-400 hover:text-white transition duration-300">
-          <i className="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" className="text-gray-400 hover:text-white transition duration-300">
-          <i className="fab fa-x-twitter"></i>
-        </a>
-        <a href="#" className="text-gray-400 hover:text-white transition duration-300">
-          <i className="fab fa-instagram"></i>
-        </a>
-        <a href="#" className="text-gray-400 hover:text-white transition duration-300">
-          <i className="fab fa-linkedin-in"></i>
-        </a>
-      </div>
+      
     </div>
 
     {/* Empty Column for Medium and Larger Screens */}
@@ -36,10 +23,10 @@ function Footer() {
     <div>
       <h3 className="text-lg font-semibold mb-4">Categories</h3>
       <ul className="space-y-2">
-        <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Technology</a></li>
-        <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Travel</a></li>
-        <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Sport</a></li>
-        <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Business</a></li>
+        <li><Link to="/blog" className="text-gray-400 hover:text-white transition duration-300">Technology</Link></li>
+        <li><Link to="/blog" className="text-gray-400 hover:text-white transition duration-300">Travel</Link></li>
+        <li><Link to="/blog" className="text-gray-400 hover:text-white transition duration-300">Sport</Link></li>
+        <li><Link to="/blog" className="text-gray-400 hover:text-white transition duration-300">Business</Link></li>
       </ul>
     </div>
 
@@ -47,10 +34,10 @@ function Footer() {
     <div>
       <h3 className="text-lg font-semibold mb-4">Homepages</h3>
       <ul className="space-y-2">
-        <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">About</a></li>
-        <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
-        <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Service</a></li>
-        <li><a href="#" className="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+        <li><Link to="/about" className="text-gray-400 hover:text-white transition duration-300">About</Link></li>
+        <li><Link to="/blog" className="text-gray-400 hover:text-white transition duration-300">Blog</Link></li>
+        <li><Link to="/services" className="text-gray-400 hover:text-white transition duration-300">Service</Link></li>
+        <li><Link to="/contact" className="text-gray-400 hover:text-white transition duration-300">Contact</Link></li>
       </ul>
     </div>
   </div>
