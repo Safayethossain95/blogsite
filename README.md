@@ -7,7 +7,7 @@
 
 ## Backend API Live Link
 
-[https://blogsite-backend-three.vercel.app](https://blogsite-backend-three.vercel.app)
+[https://blogsite-backend-three.vercel.app/api](https://blogsite-backend-three.vercel.app/api)
 
 ### Admin Login Information
 
