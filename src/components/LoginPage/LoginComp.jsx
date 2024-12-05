@@ -1,30 +1,30 @@
 import  { useState } from 'react';
-// import axios from 'axios';
-// import { API_URL } from '../../config';
-// import { useAuth } from '../../context/AuthContext';
-// import { useNavigate } from 'react-router-dom';
-// import { toast } from 'react-hot-toast';
-
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import  toast  from 'react-hot-toast';
+import { backendApi } from '../../config/config';
+import { useAuth } from '../../context/AuthContext';
 const LoginComp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-//   const { login } = useAuth();
-//   const navigate = useNavigate()
+  const { login } = useAuth()
+  const navigate = useNavigate()
   const handleSubmit = async(e) => {
     e.preventDefault();
     
-    // const res = await axios.post(`${API_URL}/login`, { email, password }, { withCredentials: true });
-    // if(res.data.token){
-    //   login()
-    //   navigate("/dashboard")
-    //   toast.success('Login Successful!');
-    //   console.log("logged in")
-    // }
+    const res = await axios.post(`${backendApi}/login`, { email, password }, { withCredentials: true });
+    if(res.data.success==true){
+      login()
+      toast.success('Login Successful!');
+      navigate("/dashboard")
+      console.log("logged in")
+    }
   };
   
 
   return (
     <div className="flex justify-center items-center min-h-[700px] bg-gray-100">
+    
   <form
     className="w-full max-w-sm p-8 bg-white rounded-lg shadow-lg"
     onSubmit={handleSubmit}

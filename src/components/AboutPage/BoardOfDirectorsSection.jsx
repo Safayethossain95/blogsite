@@ -1,33 +1,36 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable eqeqeq */
 
-import  {  useState } from "react";
+import  {  useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import './scss/aboutpagescss.scss'
 import { boardofDirectorsApi } from "../../api/boardOfDirectorsApi";
+import { backendApi } from "../../config/config";
+import axios from "axios";
 const BoardOfDirectorsComp = (props) => {
-  // const screenSize = useScreenSize();
 
-  const [mydata,setmydata] = useState(boardofDirectorsApi)
 
-  // useEffect(()=>{
-  //   async function callbod(){
-  //     const res = await axios.get(`${API_URL}/boardofdirectorsget`)
-  //     if(res &&!Only_Frontend){
-  //       setmydata(res.data.data)
-  //     } else{
-  //       setmydata(boardofDirectorsApi)
-  //     }
-  //   }
-  //   callbod()
-  // })
+  const [data,setData] = useState(boardofDirectorsApi)
+  useEffect(() => {
+    async function callapi() {
+      try {
+        const response = await axios.get(`${backendApi}/teamsget`);
+        
+        console.log(response.data);
+        setData(response.data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    callapi();
+  }, []);
   return (
     <>
       <div className="boardofdirectors">
         <div className="containermini">
 
         {
-            mydata.map((item,key)=>{
+            data.map((item,key)=>{
               return(
               
           <Row key={key} className={`rightofdirector align-items-center ${key%2==1?"flex-row-reverse":""}`}>

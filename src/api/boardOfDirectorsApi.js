@@ -1,6 +1,6 @@
 export const boardofDirectorsApi = [
     {
-        "name": "John Mitchell",
+        "name": "John Mitchell fr",
         "title": "Founder & CEO",
         "description": "John  is the visionary behind BlogMe, with a passion for connecting people through storytelling. With over 10 years of experience in the content industry, he leads the team with a commitment to excellence.",
         "image": "/images/AboutPage/boss/boss1.png",

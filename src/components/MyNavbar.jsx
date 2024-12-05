@@ -1,9 +1,23 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import { backendApi } from '../config/config';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const MyNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const navigate = useNavigate()
+  const {isLogin,logout} = useAuth()
+  const handlelogout=async()=>{
+    const res = await axios.get(`${backendApi}/logout`)
+    if(res.data.success){
+      logout()
+      navigate('/login')
+      toast.success("Logout Successful")
+    }
+  }
   return (
     <nav className="bg-gray-800  p-4">
       <div className="container mx-auto flex justify-between items-center">
@@ -19,7 +33,15 @@ const MyNavbar = () => {
           <Link to="/blog" className="text-gray-300 font-serif text-xl hover:text-white">Blog</Link>
           <Link to="/services" className="text-gray-300 font-serif text-xl hover:text-white">Services</Link>
           <Link to="/contact" className="text-gray-300 font-serif text-xl hover:text-white">Contact</Link>
-          <Link to="/login" className="text-gray-300 font-serif text-xl hover:text-white px-3 py-2 bg-blue-800 rounded-md">Login</Link>
+          {
+            isLogin?
+            <button onClick={
+              handlelogout
+            } className="text-gray-300 font-serif text-xl hover:text-white px-3 py-2 bg-blue-800 rounded-md">Logout</button>
+            :
+            <Link to="/login" className="text-gray-300 font-serif text-xl hover:text-white px-3 py-2 bg-blue-800 rounded-md">Login</Link>
+
+          }
         </div>
 
         {/* Hamburger Icon */}
