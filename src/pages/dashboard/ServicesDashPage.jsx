@@ -110,7 +110,7 @@ const ServicesDashPage = () => {
         <AdminSidebar />
       </div>
 
-      <div className="content_ad">
+      <div className="content_add">
       <h3 className="text-2xl font-serif text-center mb-[50px]">Services Edit</h3>
         <table className="table-auto border-collapse border border-gray-400 w-full m-auto">
           <thead>
