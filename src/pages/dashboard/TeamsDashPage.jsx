@@ -9,6 +9,7 @@ const TeamsDashPage = () => {
   const [changeCount, setchangeCount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [editmode, seteditmode] = useState(false);
+  const [dynamictext,setdynamictext] = useState("Create Team Person")
   const [formData, setFormData] = useState({
     name: "",
     title: "",
@@ -57,6 +58,7 @@ const TeamsDashPage = () => {
       setbnid(item._id);
       setFormData(item);
       seteditmode(true);
+      setdynamictext("Edit Team Person")
       //   setData(response.data);
     } catch (error) {
       console.error("Error deleting data:", error); // Handle any errors
@@ -164,7 +166,9 @@ const TeamsDashPage = () => {
         </table>
 
         <form>
-          
+          <div className="text-center">
+            <h3>{dynamictext}</h3>
+          </div>
           <div>
             <label className="font-serif">Name</label>
             <input

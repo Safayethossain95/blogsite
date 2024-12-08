@@ -10,6 +10,7 @@ const ServicesDashPage = () => {
   const [changeCount, setchangeCount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [editmode, seteditmode] = useState(false);
+  const [dynamictext,setdynamictext] = useState("Create Service")
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -59,6 +60,7 @@ const ServicesDashPage = () => {
       setbnid(item._id);
       setFormData(item);
       seteditmode(true);
+      setdynamictext("Edit Service")
       //   setData(response.data);
     } catch (error) {
       console.error("Error deleting data:", error); // Handle any errors
@@ -164,6 +166,9 @@ const ServicesDashPage = () => {
 
         <form>
           {/* Title Field */}
+          <div className="text-center">
+            <h3>{dynamictext}</h3>
+          </div>
           <div>
             <label className="font-serif">Title</label>
             <input

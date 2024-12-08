@@ -9,6 +9,7 @@ const DashboardPage = () => {
   const [changeCount, setchangeCount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [editmode, seteditmode] = useState(false);
+  const [dynamictext,setdynamictext] = useState("Create Blog")
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -54,6 +55,7 @@ const DashboardPage = () => {
       setbnid(item._id);
       setFormData(item);
       seteditmode(true);
+      setdynamictext("Edit Blog")
       //   setData(response.data);
     } catch (error) {
       console.error("Error deleting data:", error); // Handle any errors
@@ -162,6 +164,9 @@ const DashboardPage = () => {
 
         <form>
           {/* Title Field */}
+          <div className="text-center">
+            <h3>{dynamictext}</h3>
+          </div>
           <div>
             <label className="font-serif">Title</label>
             <input
