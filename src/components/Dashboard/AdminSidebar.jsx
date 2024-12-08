@@ -45,7 +45,7 @@ const AdminSidebar = () => {
     // }, []);
     return (
         <>
-            <div className="sidebar_ad">
+            <div className="sidebar_add">
                 <div className="sidebarcomp">
                     <ul>
                      

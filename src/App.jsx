@@ -36,19 +36,25 @@ function App() {
         <Route
             path="/dashboard"
             element={
-              <DashboardPage />
+              <ProtectedRoute
+                element={<DashboardPage />} 
+              />
             }
           />
         <Route
             path="/dashboard/teams"
             element={
-              <TeamsDashPage />
+              <ProtectedRoute
+                element={<TeamsDashPage />} 
+              />
             }
           />
         <Route
             path="/dashboard/services"
             element={
-              <ServicesDashPage />
+              <ProtectedRoute
+                element={<ServicesDashPage />} 
+              />
             }
           />
       </Routes>
